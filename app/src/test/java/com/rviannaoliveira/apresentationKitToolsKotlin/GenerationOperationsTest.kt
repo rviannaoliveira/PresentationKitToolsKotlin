@@ -6,7 +6,7 @@ import org.junit.Test
 /**
  * Criado por rodrigo on 22/07/17.
  */
-class GenerationOperations {
+class GenerationOperationsTest {
     val heroes = mutableListOf(Heroes("Spider Man", "web"), Heroes("Thor", "hammer"))
 
     @Test

@@ -6,7 +6,7 @@ import org.junit.Test
 /**
  * Criado por rodrigo on 22/07/17.
  */
-class OrderOperations {
+class OrderOperationsTest {
     val numbers = listOf(13, 32, 27, 45)
 
     @Test

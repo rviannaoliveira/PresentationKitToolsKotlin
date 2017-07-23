@@ -1,15 +1,17 @@
 package com.rviannaoliveira.apresentationKitToolsKotlin
 
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 
 /**
  * Criado por rodrigo on 22/07/17.
  */
-class FilterOperations {
+class FilterOperationsTest {
     private val heroes: MutableList<Heroes> = mutableListOf()
 
-    init {
+    @Before
+    fun setUp() {
         heroes.add(Heroes("Captain", "Shield"))
         heroes.add(Heroes("Iron Man", "Armor"))
     }
@@ -46,6 +48,18 @@ class FilterOperations {
         println(newHeroes)
         newHeroes.forEachIndexed { index, marvel -> marvel.code = index }
         assertEquals(listOf(Heroes("Captain", "Shield"), Heroes("Captain", "Shield")), newHeroes.distinctBy { it.code == 2 })
+    }
+
+    @Test
+    fun find() {
+        val find = heroes.find { it == Heroes("Captain", "Shield") }
+        assertEquals(Heroes("Captain", "Shield"), find)
+    }
+
+    @Test
+    fun doenst_find() {
+        val find = heroes.find { it == Heroes("Wolverine", "Claws") }
+        assertEquals(null, find)
     }
 
 

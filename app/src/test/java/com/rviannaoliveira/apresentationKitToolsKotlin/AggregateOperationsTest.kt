@@ -6,7 +6,7 @@ import org.junit.Test
 /**
  * Criado por rodrigo on 22/07/17.
  */
-class AggregateOperations {
+class AggregateOperationsTest {
     private val list = listOf(1, 2, 3, 4, 5, 6)
 
     @Test

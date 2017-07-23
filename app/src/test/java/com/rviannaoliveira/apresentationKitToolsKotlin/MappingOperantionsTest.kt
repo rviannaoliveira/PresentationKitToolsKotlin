@@ -1,16 +1,18 @@
 package com.rviannaoliveira.apresentationKitToolsKotlin
 
 import org.junit.Assert.assertEquals
+import org.junit.Before
 import org.junit.Test
 
 
 /**
  * Criado por rodrigo on 22/07/17.
  */
-class MappingOperantions {
+class MappingOperantionsTest {
     private val movies: MutableList<Movie> = mutableListOf()
 
-    init {
+    @Before
+    fun setUp() {
         movies.add(Movie("Spider Man", 2017))
         movies.add(Movie("Civil War", 2016))
     }
@@ -37,5 +39,6 @@ class MappingOperantions {
                 2016 to listOf(Movie("Civil War", 2016), Movie("DeadPool", 2016)),
                 2017 to listOf(Movie("Spider Man", 2017), Movie("Guardian of the Galaxy", 2017)))
         assertEquals(mapMovies, newMovies.sortedBy { it.year }.groupBy { if (it.year == 2016) 2016 else 2017 })
+        println(newMovies.sortedBy { it.year }.groupBy { if (it.year == 2016) 2016 else 2017 })
     }
 }

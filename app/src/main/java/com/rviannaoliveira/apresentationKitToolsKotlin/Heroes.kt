@@ -5,4 +5,5 @@ package com.rviannaoliveira.apresentationKitToolsKotlin
  */
 data class Heroes(val name: String, val power: String) {
     var code: Int? = null
+    var movie: Movie? = null
 }

@@ -52,11 +52,4 @@ class CollectionTest {
         assertEquals("Captain America", heroes[1])
     }
 
-
-    @Test
-    fun main() {
-
-    }
-
-
 }
