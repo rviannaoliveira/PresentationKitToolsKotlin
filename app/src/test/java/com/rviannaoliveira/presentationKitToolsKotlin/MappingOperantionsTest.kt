@@ -40,8 +40,8 @@ class MappingOperantionsTest {
                 2017 to listOf(Movie("Spider Man", 2017), Movie("Guardian of the Galaxy", 2017)))
 
 
-
-        assertEquals(mapMovies, newMovies.sortedBy { it.year }.groupBy { if (it.year == 2016) 2016 else 2017 })
-        println(newMovies.sortedBy { it.year }.groupBy { if (it.year == 2016) 2016 else 2017 })
+        val group = newMovies.sortedBy { it.year }.groupBy { it.year }
+        assertEquals(mapMovies, group)
+        println(group)
     }
 }

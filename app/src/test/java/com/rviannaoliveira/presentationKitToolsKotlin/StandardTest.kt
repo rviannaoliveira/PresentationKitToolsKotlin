@@ -10,7 +10,7 @@ class StandardTest {
     private val list: MutableList<Power> = mutableListOf()
 
     /**
-     * Return new object
+     * Return new object and it work with 'this'
      * */
     @Test
     fun apply() {
@@ -25,7 +25,7 @@ class StandardTest {
     }
 
     /**
-     * it work with 'it'
+     *Return new object and it work with 'it'
      * */
     @Test
     fun also() {
@@ -40,36 +40,39 @@ class StandardTest {
         assertEquals("Reigun", power.name)
     }
 
+
+    /**
+     * convenient when you find yourself having to call multiple different methods on the same object
+     */
     @Test
     fun with() {
-        val power: Power? = Power()
+        val power: Power = Power()
 
         with(power) {
-            power?.name = "Reigun"
-            power?.cost = 2
-            power?.cooldown = 1
-            power?.nvl = 10
-            power?.let { list.add(it) }
+            name = "Reigun"
+            cost = 2
+            cooldown = 1
+            nvl = 10
+            let { list.add(it) }
         }
 
         assertNotEquals(null, power)
     }
 
-    /**
-     * it like apply but doesnt return anything
-     */
     @Test
     fun run() {
         val power = Power()
 
-        power.run {
-            name = "Reigun"
+        val name = power.run {
+            name = "Thunder"
             cost = 2
             cooldown = 1
             nvl = 10
+            "Thor"
         }
-
-        assertEquals("Reigun", power.name)
+        println(name)
+        assertEquals("Thunder", power.name)
+        assertEquals("Thor", name)
     }
 
     @Test
@@ -77,9 +80,13 @@ class StandardTest {
         var heroes: Heroes? = null
         heroes?.let { fail() }
         heroes = Heroes("Magneto", "magnetism")
-        heroes.let {
+        val newNameHeroe = heroes.let {
             it.movie?.let { fail() }
             assertEquals("Magneto", it.name)
+            "Xavier"
         }
+        println(newNameHeroe)
+        assertEquals("Xavier", newNameHeroe)
     }
+
 }
