@@ -1,4 +1,4 @@
-package com.rviannaoliveira.apresentationKitToolsKotlin
+package com.rviannaoliveira.presentationKitToolsKotlin
 
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -38,6 +38,9 @@ class MappingOperantionsTest {
         val mapMovies = mapOf(
                 2016 to listOf(Movie("Civil War", 2016), Movie("DeadPool", 2016)),
                 2017 to listOf(Movie("Spider Man", 2017), Movie("Guardian of the Galaxy", 2017)))
+
+
+
         assertEquals(mapMovies, newMovies.sortedBy { it.year }.groupBy { if (it.year == 2016) 2016 else 2017 })
         println(newMovies.sortedBy { it.year }.groupBy { if (it.year == 2016) 2016 else 2017 })
     }

@@ -1,4 +1,4 @@
-package com.rviannaoliveira.apresentationKitToolsKotlin
+package com.rviannaoliveira.presentationKitToolsKotlin
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

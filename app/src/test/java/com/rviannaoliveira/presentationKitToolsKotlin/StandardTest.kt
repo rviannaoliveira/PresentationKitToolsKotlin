@@ -1,7 +1,6 @@
-package com.rviannaoliveira.apresentationKitToolsKotlin
+package com.rviannaoliveira.presentationKitToolsKotlin
 
-import org.junit.Assert.assertEquals
-import org.junit.Assert.fail
+import org.junit.Assert.*
 import org.junit.Test
 
 /**
@@ -10,6 +9,9 @@ import org.junit.Test
 class StandardTest {
     private val list: MutableList<Power> = mutableListOf()
 
+    /**
+     * Return new object
+     * */
     @Test
     fun apply() {
         val power = Power().apply {
@@ -22,6 +24,9 @@ class StandardTest {
         assertEquals("Reigun", power.name)
     }
 
+    /**
+     * it work with 'it'
+     * */
     @Test
     fun also() {
         val power = Power().also {
@@ -37,7 +42,7 @@ class StandardTest {
 
     @Test
     fun with() {
-        val power: Power? = null
+        val power: Power? = Power()
 
         with(power) {
             power?.name = "Reigun"
@@ -47,9 +52,12 @@ class StandardTest {
             power?.let { list.add(it) }
         }
 
-        assertEquals(null, power)
+        assertNotEquals(null, power)
     }
 
+    /**
+     * it like apply but doesnt return anything
+     */
     @Test
     fun run() {
         val power = Power()

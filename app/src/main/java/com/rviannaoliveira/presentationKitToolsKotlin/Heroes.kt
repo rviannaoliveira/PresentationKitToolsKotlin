@@ -1,4 +1,4 @@
-package com.rviannaoliveira.apresentationKitToolsKotlin
+package com.rviannaoliveira.presentationKitToolsKotlin
 
 /**
  * Criado por rodrigo on 22/07/17.

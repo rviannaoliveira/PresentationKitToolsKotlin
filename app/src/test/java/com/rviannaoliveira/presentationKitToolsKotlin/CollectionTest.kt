@@ -1,16 +1,14 @@
-package com.rviannaoliveira.apresentationKitToolsKotlin
+package com.rviannaoliveira.presentationKitToolsKotlin
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 class CollectionTest {
 
+
     @Test
     fun example_add_item_array() {
-        println("-----------------------------------------------> example_add_item_array")
         val heroes = arrayOf("Captain America", "Iron Man", "Spider Man", "DeadPool", "Thor")
-        println("val heroes = arrayOf(\"Captain America\", \"Iron Man\", \"Spider Man\", \"DeadPool\", \"Thor\")")
-        println("heroes[3] = \"Hulk\"")
         heroes[3] = "Hulk"
         assertEquals("Hulk", heroes[3])
     }
@@ -42,6 +40,9 @@ class CollectionTest {
         assertEquals(6, heroes.size)
     }
 
+    /**
+     * Show others ways mapOf and mutableMapOf
+     */
     @Test
     fun example_map() {
         println("-----------------------------------------------> example_map")
