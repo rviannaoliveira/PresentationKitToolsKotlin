@@ -57,7 +57,7 @@ class FilterOperationsTest {
     }
 
     @Test
-    fun doenst_find() {
+    fun doesnt_find() {
         val find = heroes.find { it == Heroes("Wolverine", "Claws") }
         assertEquals(null, find)
     }

@@ -8,7 +8,7 @@ import org.junit.Test
  */
 class GenerationOperationsTest {
     val heroes = mutableListOf(Heroes("Spider Man", "web"), Heroes("Thor", "hammer"))
-    //OBs
+    //Obs
     @Test
     fun plus() {
         val newHeroes = heroes + listOf(Heroes("Venom", "Symbiosis"), Heroes("Doctor Doom", "radiation"))
